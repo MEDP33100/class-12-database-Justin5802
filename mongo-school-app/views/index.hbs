@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    
+    {{#if students.length}}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Graduation Year</th>
+            <th>Major</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each students}}
+            <tr>
+              <td>{{this.name}}</td>
+              <td>{{this.grade}}</td>
+              <td>{{this.graduationYear}}</td>
+              <td>{{this.major}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <p>No student records found.</p>
+    {{/if}}
+  </body>
+</html>
